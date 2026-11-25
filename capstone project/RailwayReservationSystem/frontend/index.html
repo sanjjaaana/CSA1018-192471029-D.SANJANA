@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RailConnect - Railway Reservation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">RailConnect</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#searchSection">Search Trains</a>
+        <a href="#myBookings">My Bookings</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Your Journey Starts Here</h1>
+        <p>Book train tickets easily, safely, and quickly.</p>
+    </div>
+</section>
+
+<section class="booking-section" id="searchSection">
+    <h2>Find Your Train</h2>
+
+    <div class="booking-form">
+        <div class="input-group">
+            <label>From</label>
+            <input type="text" id="source" placeholder="Source station">
+        </div>
+
+        <div class="input-group">
+            <label>To</label>
+            <input type="text" id="destination" placeholder="Destination station">
+        </div>
+
+        <div class="input-group">
+            <label>Journey Date</label>
+            <input type="date" id="journeyDate">
+        </div>
+
+        <button id="searchBtn">Search Trains</button>
+    </div>
+
+    <div id="trainResults"></div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h3>Easy Booking</h3>
+        <p>Book your tickets with a simple and user-friendly system.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Manage Tickets</h3>
+        <p>View your bookings and cancel tickets whenever required.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>PNR Details</h3>
+        <p>Get a unique booking reference for every reservation.</p>
+    </div>
+</section>
+
+<section class="booking-history" id="myBookings">
+    <h2>My Bookings</h2>
+    <p>View and manage your reserved train tickets.</p>
+    <div id="bookingList"></div>
+</section>
+
+<!-- Passenger Details Popup -->
+<div class="passenger-modal" id="passengerModal">
+    <div class="passenger-form">
+        <div class="form-header">
+            <h2>Passenger Details</h2>
+            <p>Enter your details to book your train ticket.</p>
+            <button class="close-modal" type="button" onclick="closePassengerForm()">×</button>
+        </div>
+
+        <form id="passengerForm">
+            <div class="passenger-grid">
+                <div class="form-field">
+                    <label>Full Name</label>
+                    <input type="text" id="passengerName" placeholder="Enter full name" required>
+                </div>
+
+                <div class="form-field">
+                    <label>Mobile Number</label>
+                    <input type="tel" id="passengerPhone" placeholder="10-digit mobile number"
+                   pattern="[0-9]{10}" maxlength="10" required>
+                </div>
+
+                <div class="form-field">
+                    <label>Age</label>
+                    <input type="number" id="passengerAge" placeholder="Enter age"
+                   min="1" max="120" required>
+                </div>
+
+                <div class="form-field">
+                    <label>Gender</label>
+                    <select id="passengerGender" required>
+                        <option value="">Select gender</option>
+                        <option>Female</option>
+                        <option>Male</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-field full-width">
+                    <label>Email ID</label>
+                    <input type="email" id="passengerEmail" placeholder="example@email.com" required>
+                </div>
+
+                <div class="form-field full-width">
+                    <label>Seat Preference</label>
+                    <select id="seatPreference" required>
+                        <option value="">Choose seat preference</option>
+                        <option>Window</option>
+                        <option>Aisle</option>
+                        <option>Middle</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="passenger-form-actions">
+                <button type="button" class="form-cancel" onclick="closePassengerForm()">Cancel</button>
+                <button type="submit" class="form-submit">Confirm Booking</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>RailConnect | Railway Reservation & Ticketing System</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
